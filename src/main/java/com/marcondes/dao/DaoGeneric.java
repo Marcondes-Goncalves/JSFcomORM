@@ -8,6 +8,7 @@ import com.marcondes.jpautil.JPAUtil;
 public class DaoGeneric<E> {
     
 
+    //APENAS SALVA
     public void salvar(E entidade){
 
         EntityManager entityManager = JPAUtil.getEntityManager();
@@ -18,5 +19,20 @@ public class DaoGeneric<E> {
 
         entityTransaction.commit();
         entityManager.close();
+    }
+
+    //SALVA OU ATUALIZA E RETONAR O OBJETO
+    public E merge(E entidade){
+
+        EntityManager entityManager = JPAUtil.getEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+
+        E retorno = entityManager.merge(entidade);
+
+        entityTransaction.commit();
+        entityManager.close();
+
+        return retorno;
     }
 }

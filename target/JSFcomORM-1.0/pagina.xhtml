@@ -12,6 +12,10 @@
 
 		<h1>Olá JSF</h1>
 
+		<h:outputLabel value="Id"></h:outputLabel>
+		<h:inputText value="#{pessoaBean.pessoa.id}" readonly="true"></h:inputText>
+
+		<br/>
 		<h:outputLabel value="Nome"></h:outputLabel>
 		<h:inputText value="#{pessoaBean.pessoa.nome}"></h:inputText>
 
@@ -27,6 +31,8 @@
 		<h:outputLabel value="Nascimento"></h:outputLabel>
 		<h:inputText value="#{pessoaBean.pessoa.dataNascimento}"></h:inputText> -->
 
+		<br/>
+		<h:commandButton value="Novo" action="#{pessoaBean.novo}"></h:commandButton>
 		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}"></h:commandButton>
 
 	</h:form>
