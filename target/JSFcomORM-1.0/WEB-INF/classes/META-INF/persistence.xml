@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence 
+	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
+
+
+	<persistence-unit name="JSFcomORM">
+
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.marcondes.entidades.Pessoa</class>
+		
+		<properties>
+			<!-- Dados de conexão com o banco -->
+			<!-- URL do banco -->
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/meuprimeiroprojetojsf"/>
+			<!-- Usuario do banco de dados -->
+			<property name="javax.persistence.jdbc.user" value="postgres"/>
+			<!-- Senha do banco de dados -->
+			<property name="javax.persistence.jdbc.password" value="159357"/>
+			<!-- Driver do banco -->
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			<!-- Definindo qual o Dialéto que o Hibernate vai usar  -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+			<!-- Exibi ou não a query que o hibernate criou -->
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<!-- Config para criar/atualizar as tabelas automáticamente -->
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+		</properties>
+
+	</persistence-unit>
+
+
+</persistence>
