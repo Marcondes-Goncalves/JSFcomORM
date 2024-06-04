@@ -41,30 +41,40 @@
 		</h:panelGrid>
 
 		<br/>
-		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa">
+		<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa" border="3" cellpadding="6">
+
+			<f:facet name="header">
+				Lista de pessoas cadastradas
+			</f:facet>
+
 			<h:column>
+				<f:facet name="header">ID</f:facet>
 				<h:outputText value="#{pessoa.id}"></h:outputText>
 			</h:column>
 
 			<h:column>
+				<f:facet name="header">Nome</f:facet>
 				<h:outputText value="#{pessoa.nome}"></h:outputText>
 			</h:column>
 
 			<h:column>
+				<f:facet name="header">Sobrenome</f:facet>
 				<h:outputText value="#{pessoa.sobrenome}"></h:outputText>
 			</h:column>
 
 			<h:column>
+				<f:facet name="header">Idade</f:facet>
 				<h:outputText value="#{pessoa.idade}"></h:outputText>
 			</h:column>
 
 			<h:column>
+				<f:facet name="header">Ação</f:facet>
 				<h:commandLink value="Editar">
 					<f:setPropertyActionListener target="#{pessoaBean.pessoa}" value="#{pessoa}"></f:setPropertyActionListener>
 				</h:commandLink>
-			</h:column>
 
-			<h:column>
+				<h:outputLabel style="width: 200px;" value="	"></h:outputLabel>
+			
 				<h:commandLink value="Excluir" action="#{pessoaBean.deletar}">
 					<f:setPropertyActionListener target="#{pessoaBean.pessoa}" value="#{pessoa}"></f:setPropertyActionListener>
 				</h:commandLink>
